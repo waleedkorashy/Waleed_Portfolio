@@ -15,18 +15,20 @@ const navItems = [
 export function Header({ profile }: HeaderProps) {
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label={`${profile.preferredName} home`}>
-        {profile.preferredName}
-      </a>
-      <nav aria-label="Main navigation">
-        <ul className="nav-list">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="header-inner">
+        <a className="brand" href="#top" aria-label={`${profile.preferredName} home`}>
+          {profile.preferredName}
+        </a>
+        <nav aria-label="Main navigation">
+          <ul className="nav-list">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }

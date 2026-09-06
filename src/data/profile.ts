@@ -42,6 +42,6 @@ export const profile: Profile = {
   profileImage: {
     src: '/assets/profile/profile-photo.jpg',
     alt: 'Professional profile photo of Waleed Korashy',
-    isAvailable: false,
+    isAvailable: true,
   },
 }

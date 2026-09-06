@@ -7,11 +7,18 @@ interface AboutProps {
 export function About({ profile }: AboutProps) {
   return (
     <section id="about" className="section" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      {profile.about.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
-      ))}
-      <p className="muted">Location: {profile.location}</p>
+      <div className="section-split">
+        <div>
+          <p className="section-kicker">Profile</p>
+          <h2 id="about-title">About</h2>
+        </div>
+        <div className="section-copy">
+          {profile.about.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <p className="muted">Location: {profile.location}</p>
+        </div>
+      </div>
     </section>
   )
 }

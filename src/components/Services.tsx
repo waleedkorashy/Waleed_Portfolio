@@ -11,6 +11,7 @@ export function Services({ services }: ServicesProps) {
       <div className="grid">
         {services.map((service) => (
           <article className="panel" key={service.title}>
+            <span className="service-mark" aria-hidden="true" />
             <h3>{service.title}</h3>
             <p>{service.description}</p>
           </article>

@@ -6,28 +6,41 @@ interface ContactProps {
 
 export function Contact({ profile }: ContactProps) {
   return (
-    <section id="contact" className="section" aria-labelledby="contact-title">
-      <h2 id="contact-title">{profile.cta.heading}</h2>
-      <p>{profile.cta.supportingText}</p>
-      <ul className="contact-list">
-        <li>
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-        </li>
-        {profile.phone.isPublic && (
+    <section id="contact" className="section contact-section" aria-labelledby="contact-title">
+      <div className="contact-panel">
+        <p className="section-kicker">Contact</p>
+        <h2 id="contact-title">{profile.cta.heading}</h2>
+        <p>{profile.cta.supportingText}</p>
+        <ul className="contact-list">
           <li>
-            <a href={`tel:${profile.phone.value}`}>{profile.phone.value}</a>
+            <a className="contact-link primary-contact" href={`mailto:${profile.email}`}>
+              {profile.email}
+            </a>
           </li>
-        )}
-        <li>
-          <a href={profile.links.linkedin}>LinkedIn</a>
-        </li>
-        <li>
-          <a href={profile.links.github}>GitHub</a>
-        </li>
-        <li>
-          <a href={profile.links.cv}>CV</a>
-        </li>
-      </ul>
+          {profile.phone.isPublic && (
+            <li>
+              <a className="contact-link" href={`tel:${profile.phone.value}`}>
+                {profile.phone.value}
+              </a>
+            </li>
+          )}
+          <li>
+            <a className="contact-link" href={profile.links.linkedin}>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a className="contact-link" href={profile.links.github}>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a className="contact-link" href={profile.links.cv}>
+              CV
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
   )
 }
