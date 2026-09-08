@@ -20,10 +20,11 @@ export const projects: Project[] = [
     image: {
       src: '/assets/projects/taskflow-preview.jpg',
       alt: 'TaskFlow project screenshot',
-      isAvailable: false,
+      isAvailable: true,
     },
     links: {
       repository: 'https://github.com/waleedkorashy/taskflow.git',
+      live: 'https://taskflow-d6o.pages.dev',
     },
   },
   {
