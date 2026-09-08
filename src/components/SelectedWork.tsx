@@ -57,6 +57,46 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                   <li key={technology}>{technology}</li>
                 ))}
               </ul>
+              {project.links && (
+                <ul className="project-links" aria-label={`${project.name} links`}>
+                  {project.links.repository && (
+                    <li>
+                      <a
+                        className="project-link"
+                        href={project.links.repository}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        GitHub Repository
+                      </a>
+                    </li>
+                  )}
+                  {project.links.live && (
+                    <li>
+                      <a
+                        className="project-link"
+                        href={project.links.live}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        Live Demo
+                      </a>
+                    </li>
+                  )}
+                  {project.links.caseStudy && (
+                    <li>
+                      <a
+                        className="project-link"
+                        href={project.links.caseStudy}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        Case Study
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              )}
             </article>
           </li>
         ))}

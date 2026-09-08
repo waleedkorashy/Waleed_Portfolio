@@ -22,6 +22,9 @@ export const projects: Project[] = [
       alt: 'TaskFlow project screenshot',
       isAvailable: false,
     },
+    links: {
+      repository: 'https://github.com/waleedkorashy/taskflow.git',
+    },
   },
   {
     name: 'ShopSphere',
