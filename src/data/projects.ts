@@ -9,7 +9,7 @@ export const projects: Project[] = [
     purpose:
       'The project is designed to demonstrate real-time web application development, API-based architecture, authentication and authorization, and database-backed project workflows.',
     technologies: [
-      '.NET Web API',
+      'ASP.NET Core Web API',
       'Entity Framework Core',
       'PostgreSQL',
       'ASP.NET Core Identity',
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     purpose:
       'The project is designed to demonstrate full-stack development for product-based businesses.',
     technologies: [
-      '.NET Web API',
+      'ASP.NET Core Web API',
       'Entity Framework Core',
       'Angular',
       'JWT authentication',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     purpose:
       'The project is designed to demonstrate SaaS-style application structure, appointment scheduling workflows, booking conflict checking, background processing, and tenant-based data organization.',
     technologies: [
-      '.NET Web API',
+      'ASP.NET Core Web API',
       'Entity Framework Core',
       'Angular',
       'JWT authentication',

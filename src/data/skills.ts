@@ -12,8 +12,10 @@ export const skillGroups: SkillGroup[] = [
       { name: 'ASP.NET MVC' },
       { name: 'ASP.NET Web Forms' },
       { name: 'Entity Framework Core' },
+      { name: 'ASP.NET Core Identity' },
       { name: 'LINQ' },
       { name: 'REST APIs' },
+      { name: 'SignalR' },
     ],
   },
   {
@@ -32,6 +34,7 @@ export const skillGroups: SkillGroup[] = [
     category: 'Database',
     items: [
       { name: 'SQL Server' },
+      { name: 'PostgreSQL' },
       { name: 'T-SQL' },
       { name: 'Database Design' },
       { name: 'Entity Relationship Diagrams' },
