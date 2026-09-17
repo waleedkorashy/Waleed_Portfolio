@@ -5,6 +5,7 @@ export interface Profile {
   targetRole: string
   specialization: string
   location: string
+  relocation: string
   email: string
   phone: {
     value: string

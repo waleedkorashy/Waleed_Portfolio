@@ -16,6 +16,8 @@ export const skillGroups: SkillGroup[] = [
       { name: 'LINQ' },
       { name: 'REST APIs' },
       { name: 'SignalR' },
+      { name: 'MailKit' },
+      { name: 'Hangfire' },
     ],
   },
   {
@@ -24,10 +26,14 @@ export const skillGroups: SkillGroup[] = [
       { name: 'HTML5' },
       { name: 'CSS3' },
       { name: 'JavaScript' },
+      { name: 'TypeScript' },
       { name: 'jQuery' },
       { name: 'Bootstrap' },
       { name: 'Angular' },
       { name: 'React' },
+      { name: 'Angular CDK' },
+      { name: 'Angular Material' },
+      { name: 'Tailwind CSS' },
     ],
   },
   {
@@ -42,7 +48,15 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    category: 'Tools & Development',
+    category: 'AI / Machine Learning',
+    items: [
+      { name: 'Python' },
+      { name: 'Flask' },
+      { name: 'TensorFlow/Keras' },
+    ],
+  },
+  {
+    category: 'Tools & Deployment',
     items: [
       { name: 'Git' },
       { name: 'GitHub' },
@@ -50,6 +64,8 @@ export const skillGroups: SkillGroup[] = [
       { name: 'IIS' },
       { name: 'Visual Studio' },
       { name: 'VS Code' },
+      { name: 'Cloudflare Pages' },
+      { name: 'Docker' },
     ],
   },
   {
@@ -60,6 +76,7 @@ export const skillGroups: SkillGroup[] = [
       { name: 'Authentication' },
       { name: 'Authorization' },
       { name: 'JWT' },
+      { name: 'Email OTP Verification' },
       { name: 'API Integration' },
     ],
   },

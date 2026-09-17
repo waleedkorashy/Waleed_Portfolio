@@ -1,54 +1,60 @@
-# Waleed Korashy Portfolio
+# Waleed Korashy — Full-Stack .NET Developer
 
-Standalone React, Vite, and TypeScript portfolio website for Waleed Ahmed Korashy.
+Personal portfolio website for Waleed Korashy, a full-stack .NET developer in Egypt open to relocation and freelance opportunities. It presents my specialization, skills, and the web applications I build — real-time collaboration, e-commerce, and SaaS-style systems — to potential clients and recruiters.
 
-This project is intentionally lightweight and static. It is separate from the TaskFlow application repository and is ready for free static hosting (Vercel, Netlify, Cloudflare Pages, or GitHub Pages).
+**Live site:** https://waleed-portfolio.pages.dev/
 
-## Current Scope
+## What I build
 
-- Single-page portfolio with section navigation (Hero, About, Skills, Services, Work, Contact)
-- Typed profile, project, skill, and service data in `src/data`
-- Honest project cards: TaskFlow is the only project with a verified GitHub repository link; ShopSphere and BookIt are marked `In Development` with placeholders until their repositories and features are confirmed
+I build practical, business-focused full-stack web applications using **C# / .NET** on the backend and **Angular / React** on the frontend — with clean API architecture, secure authentication, and maintainable code. I care about understanding the business need first, communicating clearly, and shipping honest, verifiable work.
+
+## Featured projects
+
+| Project | What it is | Status |
+| --- | --- | --- |
+| [TaskFlow](https://github.com/waleedkorashy/taskflow) | Real-time Kanban project management tool — boards, columns, tasks, drag-and-drop, comments, labels, role-based access, and live sync via SignalR. ([live demo](https://taskflow-d6o.pages.dev/)) | Completed |
+| [OutfitMaker](https://github.com/waleedkorashy/OutfitMaker) | AI-powered fashion e-commerce platform with on-device ML — Find My Size (fit prediction) and AI Style Finder (visual product search). ([live demo](https://outfit-maker.wqorashy.workers.dev/)) | Completed |
+| BookIt | Multi-tenant appointment booking system (in development) | In Development |
+
+## This portfolio site
+
+Built with **React + TypeScript + Vite**:
+
+- Data-driven — profile, projects, skills, and services are typed data files in `src/data`
+- Honest project cards: real screenshots (click to enlarge) and verified, working links only
 - Responsive layout, reduced-motion support, and basic SEO/Open Graph metadata
-- SVG favicon and `theme-color`
+- Every project image offers a full-size lightbox on click
 
-Project features, screenshots, and live demos are only added once they are confirmed, so the site never claims unverified work.
-
-## Commands
+## Run locally
 
 ```bash
 npm install
-npm run dev      # local development server
-npm run lint     # ESLint check
-npm run build    # type-check + production build (outputs to dist/)
-npm run preview  # preview the production build locally
+npm run dev
 ```
 
-## Deploy (free)
+## Build and preview
 
-### Option A - Vercel (recommended, zero config)
+```bash
+npm run build    # type-check + production build → dist/
+npm run preview  # serve the production build locally
+npm run lint     # ESLint check
+```
 
-1. Push this repository to GitHub.
-2. Go to https://vercel.com and click "Add New > Project".
-3. Import the repo. Vercel auto-detects Vite; keep defaults (build `npm run build`, output `dist`).
-4. Deploy. You get a `https://<project>.vercel.app` URL and CI/CD on every push.
+## Deploy
 
-### Option B - Netlify
+Free static hosting on Cloudflare Pages:
 
-1. Push to GitHub, then go to https://netlify.com > "Add new site > Import an existing project".
-2. Build command `npm run build`, publish directory `dist`.
-3. Optional later: connect a custom domain and set the site title in Site settings.
+1. `npm run build`
+2. Cloudflare dashboard → Workers & Pages → Create → Pages → Upload assets
+3. Upload the **contents** of `dist/` (index.html, favicon.svg, assets/), not the folder itself
 
-### Option C - Cloudflare Pages
+## Contact
 
-1. Push to GitHub, then set up a Pages project at https://dash.cloudflare.com.
-2. Framework preset: Vite. Build command `npm run build`, output directory `dist`.
+- Portfolio: https://waleed-portfolio.pages.dev/
+- GitHub: https://github.com/waleedkorashy
+- LinkedIn: https://www.linkedin.com/in/waleed-korashy
+- Email: wqorashy@gmail.com
 
-### Option D - GitHub Pages
+---
 
-1. On GitHub: repo Settings > Pages > Source = GitHub Actions, then create a workflow that runs `npm run build` and publishes `dist`.
-2. Note: the site uses root-absolute asset paths, so it is easiest when served from a custom domain or a root-level page. For a repo-project page (`https://<user>.github.io/<repo>/`), also set `base: '/<repo>/'` in `vite.config.ts` before deploying.
-
-## Notes
-
-Portfolio projects are marked as `In Development` until their completed features, visuals, links, and outcomes are confirmed.
+© Waleed Ahmed Korashy

@@ -7,6 +7,7 @@ export const profile: Profile = {
   targetRole: 'Junior Full-Stack .NET Developer',
   specialization: '.NET Full Stack Development',
   location: 'Asyut, Egypt',
+  relocation: 'Open to relocation',
   email: 'wqorashy@gmail.com',
   phone: {
     value: '+20110041002',

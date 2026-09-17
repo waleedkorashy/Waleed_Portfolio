@@ -16,7 +16,7 @@ export function About({ profile }: AboutProps) {
           {profile.about.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-          <p className="muted">Location: {profile.location}</p>
+          <p className="muted">Location: {profile.location} · {profile.relocation}</p>
         </div>
       </div>
     </section>
