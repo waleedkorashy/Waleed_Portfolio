@@ -25,20 +25,6 @@ Built with **React + TypeScript + Vite**:
 - Responsive layout, reduced-motion support, and basic SEO/Open Graph metadata
 - Every project image offers a full-size lightbox on click
 
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-## Build and preview
-
-```bash
-npm run build    # type-check + production build → dist/
-npm run preview  # serve the production build locally
-npm run lint     # ESLint check
-```
 
 ## Deploy
 
