@@ -28,11 +28,7 @@ Built with **React + TypeScript + Vite**:
 
 ## Deploy
 
-Free static hosting on Cloudflare Pages:
-
-1. `npm run build`
-2. Cloudflare dashboard → Workers & Pages → Create → Pages → Upload assets
-3. Upload the **contents** of `dist/` (index.html, favicon.svg, assets/), not the folder itself
+Free static hosting on Cloudflare Pages
 
 ## Contact
 
