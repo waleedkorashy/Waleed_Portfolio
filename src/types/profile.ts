@@ -16,10 +16,12 @@ export interface Profile {
   cta: {
     heading: string
     supportingText: string
+    startLabel: string
     primaryLabel: string
     primaryHref: string
     secondaryLabel: string
     secondaryHref: string
+    resumeLabel: string
   }
   audiences: string[]
   targetClients: string[]

@@ -20,13 +20,15 @@ export const profile: Profile = {
     'I care about writing organized code, designing clear database structures, and building features that are useful for both users and business owners. I also value clear communication, careful follow-up, and understanding project requirements before moving into implementation. This portfolio presents the systems I am currently developing to demonstrate my full-stack .NET development skills.',
   ],
   cta: {
-    heading: "Let's Build Something Useful",
+    heading: 'Your Idea Deserves More Than Just Code.',
     supportingText:
-      "I'm open to freelance projects and junior full-stack .NET opportunities where clear communication, practical development, and maintainable implementation matter.",
+      "I build modern, interactive web applications with .NET that combine clean functionality with an engaging user experience. Tell me what you're trying to build, and let's turn it into a product people want to use.",
+    startLabel: 'Start Your Project →',
     primaryLabel: 'View My Work',
     primaryHref: '#work',
     secondaryLabel: "Let's Connect",
     secondaryHref: '#contact',
+    resumeLabel: 'CV',
   },
   audiences: ['Freelance clients', 'Recruiters', 'Hiring managers'],
   targetClients: [
@@ -38,7 +40,7 @@ export const profile: Profile = {
   links: {
     linkedin: 'https://www.linkedin.com/in/waleed-korashy',
     github: 'https://github.com/waleedkorashy',
-    cv: 'https://drive.google.com/file/d/1LRCVPvC6g5rlSP4s_MTUL7MzG0BooByv/view?usp=sharing',
+    cv: '/assets/Resume/Waleed_Ahmed_Korashy_Resume.pdf',
   },
   profileImage: {
     src: '/assets/profile/profile-photo.jpg',

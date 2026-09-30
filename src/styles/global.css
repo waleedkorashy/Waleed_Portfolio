@@ -18,13 +18,49 @@
   --radius-md: 16px;
   --radius-lg: 24px;
   --container-width: 1120px;
+  --color-lead: #314052;
+  --color-primary-ink: #1e3a8a;
+  --button-secondary-bg: rgba(255, 255, 255, 0.82);
+  --header-bg: rgba(247, 249, 252, 0.86);
+  --header-border: rgba(217, 226, 239, 0.9);
+  --section-border: rgba(217, 226, 239, 0.68);
+  --hero-fade-a: rgba(255, 255, 255, 0.92);
+  --hero-fade-b: rgba(247, 249, 252, 0);
+  --image-tint: rgba(255, 255, 255, 0.78);
   color: var(--color-text);
   background: var(--color-background);
+  color-scheme: light dark;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
+}
+
+:root.dark {
+  --color-background: #0b1220;
+  --color-background-soft: #101b2e;
+  --color-surface: #111c31;
+  --color-surface-strong: #16233c;
+  --color-text: #e8eef8;
+  --color-muted: #9db0c7;
+  --color-border: #24334d;
+  --color-border-strong: #36486a;
+  --color-primary: #5b9bfc;
+  --color-primary-hover: #82b4ff;
+  --color-primary-soft: #19304f;
+  --color-primary-faint: #0f1c33;
+  --color-navy: #e8eef8;
+  --color-lead: #c8d6e8;
+  --color-primary-ink: #c7dcff;
+  --button-secondary-bg: rgba(255, 255, 255, 0.07);
+  --header-bg: rgba(11, 18, 32, 0.86);
+  --header-border: rgba(36, 51, 77, 0.9);
+  --section-border: rgba(36, 51, 77, 0.8);
+  --hero-fade-a: rgba(11, 18, 32, 0.75);
+  --hero-fade-b: rgba(11, 18, 32, 0);
+  --image-tint: rgba(17, 28, 49, 0.65);
+  color-scheme: dark;
 }
 
 * {
@@ -44,7 +80,7 @@ body {
 body::before {
   background:
     radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 34rem),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 249, 252, 0));
+    linear-gradient(180deg, var(--hero-fade-a), var(--hero-fade-b));
   content: "";
   height: 440px;
   left: 0;
@@ -76,13 +112,19 @@ button:focus-visible {
 
 .site-header {
   backdrop-filter: blur(16px);
-  background: rgba(247, 249, 252, 0.86);
-  border-bottom: 1px solid rgba(217, 226, 239, 0.9);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
   max-width: none;
   padding-block: 18px;
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 14px;
 }
 
 .header-inner {
@@ -132,13 +174,40 @@ button:focus-visible {
   color: var(--color-primary-hover);
 }
 
+.theme-toggle {
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  color: var(--color-navy);
+  cursor: pointer;
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+  width: 40px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
+}
+
+.theme-toggle svg {
+  height: 18px;
+  width: 18px;
+}
+
 .section {
   padding-block: 76px;
   scroll-margin-top: 92px;
 }
 
 .section + .section {
-  border-top: 1px solid rgba(217, 226, 239, 0.68);
+  border-top: 1px solid var(--section-border);
 }
 
 .hero-section {
@@ -206,6 +275,11 @@ h1 {
   max-width: 900px;
 }
 
+.hero-section h1 {
+  font-size: clamp(1.55rem, 4vw, 5.6rem);
+  white-space: nowrap;
+}
+
 h2 {
   font-size: clamp(2rem, 3.2vw, 3.1rem);
   line-height: 1.05;
@@ -223,9 +297,18 @@ p {
 }
 
 .lead {
-  color: #314052;
+  color: var(--color-lead);
   font-size: clamp(1.08rem, 1.7vw, 1.28rem);
   line-height: 1.75;
+  max-width: 760px;
+}
+
+.hero-role {
+  color: var(--color-navy);
+  font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 18px;
   max-width: 760px;
 }
 
@@ -240,7 +323,9 @@ p {
   align-items: center;
   border: 1px solid transparent;
   border-radius: 999px;
+  cursor: pointer;
   display: inline-flex;
+  font: inherit;
   font-weight: 800;
   justify-content: center;
   min-height: 48px;
@@ -266,12 +351,24 @@ p {
 }
 
 .button.secondary {
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--button-secondary-bg);
   border-color: var(--color-border-strong);
   color: var(--color-navy);
 }
 
 .button.secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.button.download {
+  background: var(--button-secondary-bg);
+  border-color: var(--color-border-strong);
+  color: var(--color-navy);
+}
+
+.button.download:hover {
   border-color: var(--color-primary);
   color: var(--color-primary-hover);
   transform: translateY(-2px);
@@ -363,7 +460,7 @@ p {
 .image-placeholder {
   aspect-ratio: 4 / 5;
   background:
-    linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(255, 255, 255, 0.78)),
+    linear-gradient(135deg, rgba(37, 99, 235, 0.1), var(--image-tint)),
     var(--color-surface);
   border: 1px solid rgba(185, 200, 219, 0.9);
   border-radius: var(--radius-lg);
@@ -521,7 +618,7 @@ p {
   background: var(--color-primary-faint);
   border: 1px solid rgba(37, 99, 235, 0.18);
   border-radius: 999px;
-  color: #1e3a8a;
+  color: var(--color-primary-ink);
   display: inline-flex;
   font-size: 0.78rem;
   font-weight: 800;
@@ -569,7 +666,7 @@ p {
   background: var(--color-primary-faint);
   border: 1px solid rgba(37, 99, 235, 0.14);
   border-radius: 999px;
-  color: #1e3a8a;
+  color: var(--color-primary-ink);
   font-size: 0.88rem;
   font-weight: 700;
   line-height: 1.3;
@@ -578,6 +675,71 @@ p {
 
 .contact-section {
   border-top: 0;
+}
+
+.timeline {
+  display: grid;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item {
+  border-left: 2px solid rgba(37, 99, 235, 0.25);
+  padding-left: 22px;
+  position: relative;
+}
+
+.timeline-item::before {
+  background: var(--color-primary);
+  border-radius: 999px;
+  content: "";
+  height: 9px;
+  left: -5.5px;
+  position: absolute;
+  top: 7px;
+  width: 9px;
+}
+
+.timeline-meta {
+  color: var(--color-primary-hover);
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.timeline-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-details li {
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.timeline-details li::before {
+  background: var(--color-primary);
+  border-radius: 999px;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0.6em;
+  width: 5px;
+}
+
+.timeline-card {
+  margin-bottom: 18px;
+}
+
+.certifications {
+  margin-top: 40px;
 }
 
 .contact-panel {
@@ -613,9 +775,13 @@ p {
   color: #93c5fd;
 }
 
+.contact-start {
+  margin-top: 26px;
+}
+
 .contact-list {
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 16px;
   position: relative;
 }
 
@@ -625,7 +791,9 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   color: #ffffff;
+  cursor: pointer;
   display: inline-flex;
+  font: inherit;
   font-weight: 800;
   min-height: 44px;
   padding: 10px 14px;
@@ -719,6 +887,55 @@ p {
 
 .lightbox-close:hover {
   background: var(--color-primary-soft);
+}
+
+.cv-preview {
+  padding: 20px;
+}
+
+.cv-preview-frame {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  height: 88vh;
+  max-width: min(900px, 94vw);
+  overflow: auto;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.cv-document {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cv-page {
+  background: #ffffff;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.cv-download {
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  color: var(--color-primary-ink);
+  font-weight: 700;
+  padding: 10px 18px;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.cv-download:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
 }
 
 @keyframes lightbox-fade {
