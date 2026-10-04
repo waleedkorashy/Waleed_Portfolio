@@ -65,24 +65,27 @@ export const projects: Project[] = [
     },
   },
   {
-    name: 'BookIt',
-    status: 'In Development',
+    name: 'NOVA',
+    status: 'Completed',
     description:
-      'BookIt is a multi-tenant appointment booking system being developed for service-based businesses that need to manage availability, bookings, customers, and business dashboards.',
+      'NOVA is a single-page landing site for a fictional furniture brand — a quiet, editorial-leaning portfolio piece with warm paper tones, a serif display face, and photography doing most of the talking. It is frontend-only: no backend, no CMS, and no fabricated social proof.',
     purpose:
-      'The project is designed to demonstrate SaaS-style application structure, appointment scheduling workflows, booking conflict checking, background processing, and tenant-based data organization.',
+      'The project is designed to demonstrate front-end craft with a deliberately small dependency footprint — modern Angular with signal-driven, zoneless change detection, a token-based SCSS design system, and WCAG AA accessibility.',
     technologies: [
-      'ASP.NET Core Web API',
-      'Entity Framework Core',
-      'Angular',
-      'JWT authentication',
-      'Hangfire',
-      'Email notifications',
+      'Angular 22',
+      'TypeScript 6.0',
+      'SCSS',
+      'Vitest 4',
+      'Cloudflare Pages',
     ],
     image: {
-      src: '/assets/projects/bookit-preview.jpg',
-      alt: 'BookIt project screenshot',
-      isAvailable: false,
+      src: '/assets/projects/Nova-preview.jpg',
+      alt: 'NOVA landing page screenshot',
+      isAvailable: true,
+    },
+    links: {
+      repository: 'https://github.com/waleedkorashy/NOVA',
+      live: 'https://nova-furniture.pages.dev',
     },
   },
 ]
