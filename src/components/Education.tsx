@@ -9,13 +9,13 @@ export function Education({ education, certifications }: EducationProps) {
   return (
     <section id="education" className="section" aria-labelledby="education-title">
       <div className="section-split">
-        <div>
+        <div data-reveal>
           <p className="section-kicker">Background</p>
           <h2 id="education-title">Education</h2>
         </div>
         <div className="section-copy">
           {education.map((item) => (
-            <article className="panel timeline-card" key={item.degree}>
+            <article className="panel timeline-card" key={item.degree} data-reveal>
               <h3>{item.degree}</h3>
               <p className="timeline-meta">
                 {item.institution} · {item.period}
@@ -23,7 +23,7 @@ export function Education({ education, certifications }: EducationProps) {
               {item.gpa && <p className="muted">{item.gpa}</p>}
             </article>
           ))}
-          <div className="certifications">
+          <div className="certifications" data-reveal>
             <h3>Certifications</h3>
             <ul className="timeline-details">
               {certifications.map((cert) => (

@@ -7,10 +7,10 @@ interface SkillsProps {
 export function Skills({ skillGroups }: SkillsProps) {
   return (
     <section id="skills" className="section" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
+      <h2 id="skills-title" data-reveal>Skills</h2>
       <div className="grid">
         {skillGroups.map((group) => (
-          <article className="panel" key={group.category}>
+          <article className="panel" key={group.category} data-reveal>
             <h3>{group.category}</h3>
             <ul className="tag-list">
               {group.items.map((skill) => (

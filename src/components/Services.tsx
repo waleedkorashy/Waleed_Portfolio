@@ -7,10 +7,10 @@ interface ServicesProps {
 export function Services({ services }: ServicesProps) {
   return (
     <section id="services" className="section" aria-labelledby="services-title">
-      <h2 id="services-title">Services</h2>
+      <h2 id="services-title" data-reveal>Services</h2>
       <div className="grid">
         {services.map((service) => (
-          <article className="panel" key={service.title}>
+          <article className="panel" key={service.title} data-reveal>
             <span className="service-mark" aria-hidden="true" />
             <h3>{service.title}</h3>
             <p>{service.description}</p>

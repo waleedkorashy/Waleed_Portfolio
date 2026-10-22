@@ -8,7 +8,7 @@ interface HeroProps {
 export function Hero({ profile, onOpenCV }: HeroProps) {
   return (
     <section id="top" className="section hero-section" aria-labelledby="hero-title">
-      <div>
+      <div className="hero-copy">
         <p className="eyebrow">{profile.targetRole}</p>
         <h1 id="hero-title">{profile.fullName}</h1>
         <p className="hero-role">{profile.professionalTitle}</p>
@@ -25,7 +25,7 @@ export function Hero({ profile, onOpenCV }: HeroProps) {
           </button>
         </div>
       </div>
-      <div className="image-placeholder" aria-label={profile.profileImage.alt}>
+      <div className="image-placeholder hero-media" aria-label={profile.profileImage.alt}>
         {profile.profileImage.isAvailable ? (
           <img
             src={profile.profileImage.src}

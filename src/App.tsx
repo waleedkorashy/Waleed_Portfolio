@@ -15,9 +15,11 @@ import { projects } from './data/projects'
 import { certifications, education, experience } from './data/resume'
 import { services } from './data/services'
 import { skillGroups } from './data/skills'
+import { useScrollReveal } from './hooks/useScrollReveal'
 
 function App() {
   const [isCVOpen, setIsCVOpen] = useState(false)
+  useScrollReveal()
 
   return (
     <>

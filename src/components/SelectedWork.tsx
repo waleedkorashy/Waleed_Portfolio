@@ -22,7 +22,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
 
   return (
     <section id="work" className="section" aria-labelledby="work-title">
-      <div className="section-heading">
+      <div className="section-heading" data-reveal>
         <p className="section-kicker">Portfolio</p>
         <h2 id="work-title">Selected Work</h2>
         <p className="section-intro">
@@ -34,7 +34,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
         {projects.map((project) => {
           const image = project.image
           return (
-            <li key={project.name}>
+            <li key={project.name} data-reveal>
               <article className="panel project-card">
                 {image?.isAvailable ? (
                   <button

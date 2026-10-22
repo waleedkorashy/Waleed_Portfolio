@@ -8,14 +8,14 @@ export function Experience({ experience }: ExperienceProps) {
   return (
     <section id="experience" className="section" aria-labelledby="experience-title">
       <div className="section-split">
-        <div>
+        <div data-reveal>
           <p className="section-kicker">Background</p>
           <h2 id="experience-title">Experience</h2>
         </div>
         <div className="section-copy">
           <ol className="timeline">
             {experience.map((entry) => (
-              <li className="timeline-item" key={entry.title}>
+              <li className="timeline-item" key={entry.title} data-reveal>
                 <h3>{entry.title}</h3>
                 <p className="timeline-meta">
                   {entry.organization}

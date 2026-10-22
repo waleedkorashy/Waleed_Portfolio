@@ -59,7 +59,7 @@ export function Contact({ profile, onOpenCV }: ContactProps) {
 
   return (
     <section id="contact" className="section contact-section" aria-labelledby="contact-title">
-      <div className="contact-panel">
+      <div className="contact-panel" data-reveal>
         <p className="section-kicker">Contact</p>
         <h2 id="contact-title">{profile.cta.heading}</h2>
         <p>{profile.cta.supportingText}</p>
