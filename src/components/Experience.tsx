@@ -9,7 +9,7 @@ export function Experience({ experience }: ExperienceProps) {
     <section id="experience" className="section" aria-labelledby="experience-title">
       <div className="section-split">
         <div>
-          <p className="section-kicker">Career</p>
+          <p className="section-kicker">Background</p>
           <h2 id="experience-title">Experience</h2>
         </div>
         <div className="section-copy">

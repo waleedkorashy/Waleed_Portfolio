@@ -4,7 +4,7 @@ export const experience: ExperienceEntry[] = [
   {
     title: 'OutfitMaker — AI-Powered Fashion E-Commerce Platform',
     organization: 'EELU Graduation Project · Rebuilt & Expanded',
-    period: '2024 – Present',
+    period: '2024',
     details: [
       'Built and deployed a full-stack fashion storefront: a React + TypeScript (Vite, Tailwind CSS) frontend, an ASP.NET Core REST API with EF Core and SQL Server, and a separate Python Flask AI microservice — live end-to-end.',
       'Implemented "Find My Size", a RandomForest classifier that predicts a shopper’s correct clothing size from body measurements.',

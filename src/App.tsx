@@ -21,15 +21,18 @@ function App() {
 
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <Header profile={profile} />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero profile={profile} onOpenCV={() => setIsCVOpen(true)} />
         <About profile={profile} />
+        <SelectedWork projects={projects} />
         <Experience experience={experience} />
         <Education education={education} certifications={certifications} />
         <Skills skillGroups={skillGroups} />
         <Services services={services} />
-        <SelectedWork projects={projects} />
         <Contact profile={profile} onOpenCV={() => setIsCVOpen(true)} />
       </main>
       <Footer profile={profile} />

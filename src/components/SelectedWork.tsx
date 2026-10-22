@@ -79,7 +79,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                   <span className="project-purpose-label">Purpose</span>
                   {project.purpose}
                 </p>
-                <ul className="tag-list" aria-label={`${project.name} technology direction`}>
+                <ul className="tag-list" aria-label={`${project.name} technologies`}>
                   {project.technologies.map((technology) => (
                     <li key={technology}>{technology}</li>
                   ))}
@@ -93,6 +93,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                           href={project.links.repository}
                           target="_blank"
                           rel="noreferrer noopener"
+                          aria-label={`${project.name} GitHub repository`}
                         >
                           GitHub Repository
                         </a>
@@ -105,6 +106,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                           href={project.links.live}
                           target="_blank"
                           rel="noreferrer noopener"
+                          aria-label={`${project.name} live demo`}
                         >
                           Live Demo
                         </a>
@@ -117,6 +119,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                           href={project.links.caseStudy}
                           target="_blank"
                           rel="noreferrer noopener"
+                          aria-label={`${project.name} case study`}
                         >
                           Case Study
                         </a>
