@@ -8,6 +8,7 @@ const jobs = [
     quality: 80,
     outputs: [
       { suffix: '-480', width: 480 },
+      { suffix: '-720', width: 720 },
       { suffix: '-960', width: 960 },
     ],
   },

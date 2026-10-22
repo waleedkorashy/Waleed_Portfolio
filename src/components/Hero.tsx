@@ -30,12 +30,13 @@ export function Hero({ profile, onOpenCV }: HeroProps) {
           <img
             src={profile.profileImage.src}
             srcSet={profile.profileImage.srcSet}
-            sizes="(min-width: 920px) 420px, 90vw"
+            sizes="(min-width: 480px) 420px, 90vw"
             width={profile.profileImage.width}
             height={profile.profileImage.height}
             alt={profile.profileImage.alt}
             loading="eager"
             decoding="async"
+            fetchPriority="high"
           />
         ) : (
           <span>Profile photo coming soon</span>

@@ -45,7 +45,7 @@ export const profile: Profile = {
   profileImage: {
     src: '/assets/profile/profile-photo-960.webp',
     srcSet:
-      '/assets/profile/profile-photo-480.webp 480w, /assets/profile/profile-photo-960.webp 960w',
+      '/assets/profile/profile-photo-480.webp 480w, /assets/profile/profile-photo-720.webp 720w, /assets/profile/profile-photo-960.webp 960w',
     width: 960,
     height: 1200,
     alt: 'Professional portrait of Waleed Korashy in a dark suit',
