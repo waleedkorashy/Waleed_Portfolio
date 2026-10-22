@@ -23,8 +23,12 @@ export const projects: Project[] = [
       'Windows/IIS hosting',
     ],
     image: {
-      src: '/assets/projects/taskflow-preview.jpg',
-      alt: 'TaskFlow project screenshot',
+      src: '/assets/projects/taskflow-preview-1600.webp',
+      srcSet:
+        '/assets/projects/taskflow-preview-800.webp 800w, /assets/projects/taskflow-preview-1600.webp 1600w',
+      width: 1600,
+      height: 715,
+      alt: 'TaskFlow workspace dashboard showing project cards in a grid',
       isAvailable: true,
     },
     links: {
@@ -55,8 +59,12 @@ export const projects: Project[] = [
       'Docker',
     ],
     image: {
-      src: '/assets/projects/OutfitMaker-preview.jpg',
-      alt: 'OutfitMaker project screenshot',
+      src: '/assets/projects/OutfitMaker-preview-1600.webp',
+      srcSet:
+        '/assets/projects/OutfitMaker-preview-800.webp 800w, /assets/projects/OutfitMaker-preview-1600.webp 1600w',
+      width: 1600,
+      height: 728,
+      alt: 'OutfitMaker shop page with a grid of T-shirt products, search, and category filters',
       isAvailable: true,
     },
     links: {
@@ -79,8 +87,12 @@ export const projects: Project[] = [
       'Cloudflare Pages',
     ],
     image: {
-      src: '/assets/projects/Nova-preview.jpg',
-      alt: 'NOVA landing page screenshot',
+      src: '/assets/projects/Nova-preview-1600.webp',
+      srcSet:
+        '/assets/projects/Nova-preview-800.webp 800w, /assets/projects/Nova-preview-1600.webp 1600w',
+      width: 1600,
+      height: 735,
+      alt: 'NOVA landing page with a serif headline, editorial copy, and a warm living-room photograph',
       isAvailable: true,
     },
     links: {

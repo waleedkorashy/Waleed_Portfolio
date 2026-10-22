@@ -32,6 +32,9 @@ export interface Profile {
   }
   profileImage: {
     src: string
+    srcSet?: string
+    width?: number
+    height?: number
     alt: string
     isAvailable: boolean
   }

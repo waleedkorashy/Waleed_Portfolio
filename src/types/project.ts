@@ -8,6 +8,9 @@ export interface Project {
   technologies: string[]
   image?: {
     src: string
+    srcSet?: string
+    width?: number
+    height?: number
     alt: string
     isAvailable: boolean
   }

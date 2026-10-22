@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import type { Project } from '../types/project'
+import { ScreenshotLightbox } from './ScreenshotLightbox'
 
 interface SelectedWorkProps {
   projects: Project[]
 }
 
-interface ActiveImage {
-  src: string
-  alt: string
-}
+type ActiveImage = NonNullable<Project['image']>
 
 function getMonogram(name: string): string {
   return name
@@ -21,19 +19,6 @@ function getMonogram(name: string): string {
 
 export function SelectedWork({ projects }: SelectedWorkProps) {
   const [active, setActive] = useState<ActiveImage | null>(null)
-
-  useEffect(() => {
-    if (!active) return
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setActive(null)
-    }
-    window.addEventListener('keydown', onKeyDown)
-    document.body.style.overflow = 'hidden'
-    return () => {
-      window.removeEventListener('keydown', onKeyDown)
-      document.body.style.overflow = ''
-    }
-  }, [active])
 
   return (
     <section id="work" className="section" aria-labelledby="work-title">
@@ -55,10 +40,19 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                   <button
                     type="button"
                     className="project-visual project-visual-button"
-                    onClick={() => setActive({ src: image.src, alt: image.alt })}
+                    onClick={() => setActive(image)}
                     aria-label={`View larger ${image.alt}`}
                   >
-                    <img src={image.src} alt={image.alt} />
+                    <img
+                      src={image.src}
+                      srcSet={image.srcSet}
+                      sizes="(min-width: 1120px) 360px, (min-width: 720px) 33vw, calc(100vw - 48px)"
+                      width={image.width}
+                      height={image.height}
+                      alt={image.alt}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <span className="visual-hint" aria-hidden="true">
                       Click to enlarge
                     </span>
@@ -135,28 +129,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
           )
         })}
       </ul>
-      {active && (
-        <div
-          className="lightbox-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Project screenshot preview"
-          onClick={() => setActive(null)}
-        >
-          <figure className="lightbox-content" onClick={(event) => event.stopPropagation()}>
-            <img src={active.src} alt={active.alt} />
-            <figcaption>{active.alt}</figcaption>
-            <button
-              type="button"
-              className="lightbox-close"
-              onClick={() => setActive(null)}
-              aria-label="Close preview"
-            >
-              &times;
-            </button>
-          </figure>
-        </div>
-      )}
+      {active && <ScreenshotLightbox image={active} onClose={() => setActive(null)} />}
     </section>
   )
 }

@@ -43,8 +43,12 @@ export const profile: Profile = {
     cv: '/assets/Resume/Waleed_Ahmed_Korashy_Resume.pdf',
   },
   profileImage: {
-    src: '/assets/profile/profile-photo.jpg',
-    alt: 'Professional profile photo of Waleed Korashy',
+    src: '/assets/profile/profile-photo-960.webp',
+    srcSet:
+      '/assets/profile/profile-photo-480.webp 480w, /assets/profile/profile-photo-960.webp 960w',
+    width: 960,
+    height: 1200,
+    alt: 'Professional portrait of Waleed Korashy in a dark suit',
     isAvailable: true,
   },
 }
