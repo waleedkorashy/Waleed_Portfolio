@@ -21,6 +21,11 @@
   --color-lead: #314052;
   --color-primary-ink: #1e3a8a;
   --button-secondary-bg: rgba(255, 255, 255, 0.82);
+  --button-primary-bg: #2563eb;
+  --button-primary-bg-hover: #1d4ed8;
+  --button-primary-text: #ffffff;
+  --contact-panel-from: #111c31;
+  --contact-panel-to: #17284a;
   --header-bg: rgba(247, 249, 252, 0.86);
   --header-border: rgba(217, 226, 239, 0.9);
   --section-border: rgba(217, 226, 239, 0.68);
@@ -54,6 +59,8 @@
   --color-lead: #c8d6e8;
   --color-primary-ink: #c7dcff;
   --button-secondary-bg: rgba(255, 255, 255, 0.07);
+  --contact-panel-from: #1b2c4d;
+  --contact-panel-to: #111c31;
   --header-bg: rgba(11, 18, 32, 0.86);
   --header-border: rgba(36, 51, 77, 0.9);
   --section-border: rgba(36, 51, 77, 0.8);
@@ -340,13 +347,13 @@ p {
 }
 
 .button.primary {
-  background: var(--color-primary);
+  background: var(--button-primary-bg);
   box-shadow: 0 12px 28px rgba(37, 99, 235, 0.24);
-  color: #ffffff;
+  color: var(--button-primary-text);
 }
 
 .button.primary:hover {
-  background: var(--color-primary-hover);
+  background: var(--button-primary-bg-hover);
   transform: translateY(-2px);
 }
 
@@ -743,7 +750,7 @@ p {
 }
 
 .contact-panel {
-  background: linear-gradient(135deg, var(--color-navy), #17284a);
+  background: linear-gradient(135deg, var(--contact-panel-from), var(--contact-panel-to));
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   color: #ffffff;
@@ -812,11 +819,12 @@ p {
 
 .primary-contact {
   background: #ffffff;
-  color: var(--color-primary-hover);
+  color: #1d4ed8;
 }
 
 .primary-contact:hover {
-  background: var(--color-primary-soft);
+  background: #dbeafe;
+  color: #1e3a8a;
 }
 
 .site-footer {
@@ -870,7 +878,7 @@ p {
   border: 0;
   border-radius: 999px;
   box-shadow: var(--shadow-sm);
-  color: var(--color-navy);
+  color: #111c31;
   cursor: pointer;
   display: inline-flex;
   font-size: 1.3rem;
@@ -886,7 +894,8 @@ p {
 }
 
 .lightbox-close:hover {
-  background: var(--color-primary-soft);
+  background: #dbeafe;
+  color: #1e3a8a;
 }
 
 .cv-preview {
