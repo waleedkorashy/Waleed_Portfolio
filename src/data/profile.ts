@@ -3,8 +3,8 @@ import type { Profile } from '../types/profile'
 export const profile: Profile = {
   fullName: 'Waleed Ahmed Korashy',
   preferredName: 'Waleed Korashy',
-  professionalTitle: 'Junior Full-Stack .NET Developer Building Practical Business Web Applications',
-  targetRole: 'Junior Full-Stack .NET Developer',
+  professionalTitle: 'Full Stack .NET Developer Building Practical Business Applications',
+  targetRole: 'Full Stack .NET Developer',
   specialization: '.NET Full Stack Development',
   location: 'Asyut, Egypt',
   relocation: 'Open to relocation',
@@ -14,10 +14,10 @@ export const profile: Profile = {
     isPublic: false,
   },
   valueProposition:
-    'I build structured web applications with clear requirements, organized backend logic, and user-focused frontend interfaces. My approach is to understand the business need first, communicate clearly during development, and deliver practical .NET-based solutions that are maintainable, reliable, and ready to grow as the project evolves.',
+    "Computer and Information Technology graduate targeting a Full Stack .NET Developer role. Hands-on experience building full-stack applications with C#, ASP.NET Core, Entity Framework, SQL Server, Angular, and React — including REST APIs, JWT authentication, and deployment to IIS and cloud platforms. I've shipped an AI-integrated fashion e-commerce platform and a real-time Kanban app, both live with public source code, and I'm currently building MediPass+, a medical history platform with visit-scoped doctor access.",
   about: [
-    'I’m Waleed Korashy, a Junior Full-Stack .NET Developer based in Asyut, Egypt. I focus on building practical web applications using C#, ASP.NET Core, Entity Framework Core, SQL Server, and modern frontend tools such as Angular and React. My current portfolio projects are designed around real business use cases, including project management, e-commerce, and appointment booking systems.',
-    'I care about writing organized code, designing clear database structures, and building features that are useful for both users and business owners. I also value clear communication, careful follow-up, and understanding project requirements before moving into implementation. This portfolio presents the systems I am currently developing to demonstrate my full-stack .NET development skills.',
+    "I'm Waleed Korashy, a Full Stack .NET Developer based in Asyut, Egypt. I build full-stack web applications using C#, ASP.NET Core, Entity Framework, SQL Server, Angular, and React, with hands-on experience in REST APIs, JWT authentication, and deployment to IIS and cloud platforms.",
+    "I care about clean architecture, well-designed data models, and features that solve real business problems. I've shipped an AI-integrated fashion e-commerce platform and a real-time Kanban app — both live with public source code — and I'm currently building MediPass+, a medical history platform with visit-scoped doctor access. I also value clear communication and understanding requirements before moving into implementation.",
   ],
   cta: {
     heading: 'Your Idea Deserves More Than Just Code.',
@@ -35,7 +35,7 @@ export const profile: Profile = {
     'E-commerce businesses',
     'Startups',
     'Software companies',
-    'Suitable junior full-stack .NET development projects',
+    'Suitable full-stack .NET development projects',
   ],
   links: {
     linkedin: 'https://www.linkedin.com/in/waleed-korashy',

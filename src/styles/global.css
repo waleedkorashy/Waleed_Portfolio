@@ -333,8 +333,12 @@ h1 {
   max-width: 900px;
 }
 
+.hero-section .eyebrow {
+  font-size: 0.9rem;
+}
+
 .hero-section h1 {
-  font-size: clamp(1.55rem, 4vw, 5.6rem);
+  font-size: clamp(1.45rem, 3.6vw, 3.6rem);
   white-space: nowrap;
 }
 
@@ -363,9 +367,9 @@ p {
 
 .hero-role {
   color: var(--color-navy);
-  font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+  font-size: clamp(0.92rem, 1.35vw, 1.15rem);
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: 18px;
   max-width: 760px;
 }
@@ -1064,9 +1068,34 @@ p {
   height: 88vh;
   max-width: min(900px, 94vw);
   overflow: auto;
-  padding: 20px;
+  padding: 0;
   position: relative;
   width: 100%;
+}
+
+.cv-toolbar {
+  align-items: center;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 12px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.cv-toolbar-title {
+  color: var(--color-navy);
+  font-weight: 800;
+  margin: 0;
+}
+
+.cv-toolbar-actions {
+  align-items: center;
+  display: flex;
+  gap: 10px;
 }
 
 .cv-document {
@@ -1074,6 +1103,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 20px;
 }
 
 .cv-page {
@@ -1087,20 +1117,49 @@ p {
 }
 
 .cv-download {
-  border: 1px solid var(--color-border-strong);
-  border-radius: 999px;
-  color: var(--color-primary-ink);
-  font-weight: 700;
-  padding: 10px 18px;
-  text-decoration: none;
-  transition:
-    border-color 160ms ease,
-    color 160ms ease;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 16px;
 }
 
-.cv-download:hover {
+.cv-download svg {
+  height: 17px;
+  width: 17px;
+}
+
+.cv-close {
+  align-items: center;
+  background: var(--button-secondary-bg);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  color: var(--color-navy);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1.2rem;
+  font-weight: 800;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+  width: 40px;
+}
+
+.cv-close:hover {
   border-color: var(--color-primary);
   color: var(--color-primary-hover);
+}
+
+@media (max-width: 560px) {
+  .cv-toolbar-title {
+    display: none;
+  }
+
+  .cv-toolbar {
+    justify-content: flex-end;
+  }
 }
 
 @keyframes lightbox-fade {

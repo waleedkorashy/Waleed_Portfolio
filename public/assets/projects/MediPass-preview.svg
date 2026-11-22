@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="medipass-title medipass-desc">
+  <title id="medipass-title">MediPass+ — Medical History Platform</title>
+  <desc id="medipass-desc">A simple logo cover: a blue-to-teal gradient badge with a white medical cross above the MediPass+ wordmark.</desc>
+  <defs>
+    <linearGradient id="mp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff" />
+      <stop offset="1" stop-color="#e7f1ff" />
+    </linearGradient>
+    <linearGradient id="mp-badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb" />
+      <stop offset="1" stop-color="#0ea5a4" />
+    </linearGradient>
+    <radialGradient id="mp-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2563eb" stop-opacity="0.10" />
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#mp-bg)" />
+  <circle cx="1320" cy="120" r="340" fill="url(#mp-glow)" />
+  <circle cx="210" cy="800" r="320" fill="url(#mp-glow)" />
+  <g stroke="#2563eb" stroke-opacity="0.05" stroke-width="2">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600" />
+    <path d="M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900" />
+  </g>
+
+  <ellipse cx="800" cy="470" rx="150" ry="26" fill="#0f172a" opacity="0.07" />
+
+  <rect x="700" y="250" width="200" height="200" rx="54" fill="url(#mp-badge)" />
+  <rect x="778" y="292" width="44" height="116" rx="12" fill="#ffffff" />
+  <rect x="742" y="328" width="116" height="44" rx="12" fill="#ffffff" />
+
+  <text x="800" y="576" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="108" font-weight="800" fill="#0f172a">MediPass<tspan fill="#0ea5a4">+</tspan></text>
+  <text x="800" y="630" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="7" fill="#64748b">MEDICAL HISTORY PLATFORM</text>
+
+  <path d="M600 706h66l26-44l36 88l32-44h240" fill="none" stroke="#2563eb" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+
+  <text x="800" y="772" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1e3a8a" opacity="0.85">ASP.NET Core 10 · EF Core · SQL Server · Visit-Scoped Access</text>
+</svg>
