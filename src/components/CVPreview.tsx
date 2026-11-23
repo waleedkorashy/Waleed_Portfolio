@@ -1,4 +1,5 @@
 import { useDialog } from '../hooks/useDialog'
+import { trackEvent } from '../lib/analytics'
 
 interface CVPreviewProps {
   cvSrc: string
@@ -24,7 +25,12 @@ export function CVPreview({ cvSrc, label, onClose }: CVPreviewProps) {
         <div className="cv-toolbar">
           <p className="cv-toolbar-title">{label} Preview</p>
           <div className="cv-toolbar-actions">
-            <a className="button primary cv-download" href={cvSrc} download>
+            <a
+              className="button primary cv-download"
+              href={cvSrc}
+              download
+              onClick={() => trackEvent('CV Download', { source: 'cv_preview' })}
+            >
               <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"

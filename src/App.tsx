@@ -16,10 +16,16 @@ import { certifications, education, experience } from './data/resume'
 import { services } from './data/services'
 import { skillGroups } from './data/skills'
 import { useScrollReveal } from './hooks/useScrollReveal'
+import { trackEvent } from './lib/analytics'
 
 function App() {
   const [isCVOpen, setIsCVOpen] = useState(false)
   useScrollReveal()
+
+  const openCV = (source: 'hero' | 'contact') => {
+    trackEvent('CV Preview', { source })
+    setIsCVOpen(true)
+  }
 
   return (
     <>
@@ -28,14 +34,14 @@ function App() {
       </a>
       <Header profile={profile} />
       <main id="main-content" tabIndex={-1}>
-        <Hero profile={profile} onOpenCV={() => setIsCVOpen(true)} />
+        <Hero profile={profile} onOpenCV={() => openCV('hero')} />
         <About profile={profile} />
         <SelectedWork projects={projects} />
         <Experience experience={experience} />
         <Education education={education} certifications={certifications} />
         <Skills skillGroups={skillGroups} />
         <Services services={services} />
-        <Contact profile={profile} onOpenCV={() => setIsCVOpen(true)} />
+        <Contact profile={profile} onOpenCV={() => openCV('contact')} />
       </main>
       <Footer profile={profile} />
       {isCVOpen && (
