@@ -16,11 +16,13 @@ import { certifications, education, experience } from './data/resume'
 import { services } from './data/services'
 import { skillGroups } from './data/skills'
 import { useScrollReveal } from './hooks/useScrollReveal'
+import { useSectionTracking } from './hooks/useSectionTracking'
 import { trackEvent } from './lib/analytics'
 
 function App() {
   const [isCVOpen, setIsCVOpen] = useState(false)
   useScrollReveal()
+  useSectionTracking()
 
   const openCV = (source: 'hero' | 'contact') => {
     trackEvent('CV Preview', { source })

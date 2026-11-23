@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Profile } from '../types/profile'
+import { trackEvent } from '../lib/analytics'
 import { ThemeToggle } from './ThemeToggle'
 
 interface HeaderProps {
@@ -72,6 +73,7 @@ export function Header({ profile }: HeaderProps) {
   }
 
   const handleNavClick = (href: string) => {
+    trackEvent('Nav Click', { section: href.replace(/^#/, '') })
     setIsMenuOpen(false)
     const target = document.querySelector<HTMLElement>(href)
     if (!target) return
@@ -86,7 +88,7 @@ export function Header({ profile }: HeaderProps) {
           className="brand"
           href="#top"
           aria-label={`${profile.preferredName} home`}
-          onClick={() => setIsMenuOpen(false)}
+          onClick={() => handleNavClick('#top')}
         >
           {profile.preferredName}
         </a>

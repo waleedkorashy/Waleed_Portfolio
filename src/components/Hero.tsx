@@ -1,4 +1,5 @@
 import type { Profile } from '../types/profile'
+import { trackEvent } from '../lib/analytics'
 
 interface HeroProps {
   profile: Profile
@@ -14,10 +15,28 @@ export function Hero({ profile, onOpenCV }: HeroProps) {
         <p className="hero-role">{profile.professionalTitle}</p>
         <p className="lead">{profile.valueProposition}</p>
         <div className="cta-row" aria-label="Primary actions">
-          <a className="button primary" href={profile.cta.primaryHref}>
+          <a
+            className="button primary"
+            href={profile.cta.primaryHref}
+            onClick={() =>
+              trackEvent('CTA Click', {
+                location: 'hero',
+                target: profile.cta.primaryHref.replace(/^#/, ''),
+              })
+            }
+          >
             {profile.cta.primaryLabel}
           </a>
-          <a className="button secondary" href={profile.cta.secondaryHref}>
+          <a
+            className="button secondary"
+            href={profile.cta.secondaryHref}
+            onClick={() =>
+              trackEvent('CTA Click', {
+                location: 'hero',
+                target: profile.cta.secondaryHref.replace(/^#/, ''),
+              })
+            }
+          >
             {profile.cta.secondaryLabel}
           </a>
           <button className="button download" type="button" onClick={onOpenCV}>

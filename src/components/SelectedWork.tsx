@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { Project } from '../types/project'
+import { trackEvent } from '../lib/analytics'
 import { ScreenshotLightbox } from './ScreenshotLightbox'
 
 interface SelectedWorkProps {
@@ -40,7 +41,10 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                   <button
                     type="button"
                     className="project-visual project-visual-button"
-                    onClick={() => setActive(image)}
+                    onClick={() => {
+                      trackEvent('Project Image Open', { project: project.name })
+                      setActive(image)
+                    }}
                     aria-label={`View larger ${image.alt}`}
                   >
                     <img
@@ -94,6 +98,12 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                           target="_blank"
                           rel="noreferrer noopener"
                           aria-label={`${project.name} GitHub repository`}
+                          onClick={() =>
+                            trackEvent('Project Link', {
+                              project: project.name,
+                              type: 'repository',
+                            })
+                          }
                         >
                           GitHub Repository
                         </a>
@@ -107,6 +117,12 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                           target="_blank"
                           rel="noreferrer noopener"
                           aria-label={`${project.name} live demo`}
+                          onClick={() =>
+                            trackEvent('Project Link', {
+                              project: project.name,
+                              type: 'demo',
+                            })
+                          }
                         >
                           Live Demo
                         </a>
@@ -120,6 +136,12 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                           target="_blank"
                           rel="noreferrer noopener"
                           aria-label={`${project.name} case study`}
+                          onClick={() =>
+                            trackEvent('Project Link', {
+                              project: project.name,
+                              type: 'case_study',
+                            })
+                          }
                         >
                           Case Study
                         </a>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Profile } from '../types/profile'
+import { trackEvent } from '../lib/analytics'
 
 interface ContactProps {
   profile: Profile
@@ -32,6 +33,7 @@ export function Contact({ profile, onOpenCV }: ContactProps) {
     if (!contactEndpoint) {
       const subject = encodeURIComponent(`Portfolio enquiry from ${name}`)
       const body = encodeURIComponent(`${message}\n\nFrom: ${name} <${email}>`)
+      trackEvent('Contact Form Submit', { status: 'mailto_fallback' })
       window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
       setStatus('fallback')
       return
@@ -52,8 +54,10 @@ export function Contact({ profile, onOpenCV }: ContactProps) {
 
       form.reset()
       setStatus('success')
+      trackEvent('Contact Form Submit', { status: 'success' })
     } catch {
       setStatus('error')
+      trackEvent('Contact Form Submit', { status: 'error' })
     }
   }
 
@@ -114,37 +118,65 @@ export function Contact({ profile, onOpenCV }: ContactProps) {
             {status === 'error' && (
               <p>
                 Something went wrong. Please email me directly at{' '}
-                <a href={`mailto:${profile.email}`}>{profile.email}</a>.
+                <a
+                  href={`mailto:${profile.email}`}
+                  onClick={() => trackEvent('Email Click', { location: 'contact_error' })}
+                >
+                  {profile.email}
+                </a>
+                .
               </p>
             )}
             {status === 'fallback' && (
               <p>
                 Opening your email app. If nothing happens, email me directly at{' '}
-                <a href={`mailto:${profile.email}`}>{profile.email}</a>.
+                <a
+                  href={`mailto:${profile.email}`}
+                  onClick={() => trackEvent('Email Click', { location: 'contact_fallback' })}
+                >
+                  {profile.email}
+                </a>
+                .
               </p>
             )}
           </div>
         </form>
         <ul className="contact-list" aria-label="Other ways to reach me">
           <li>
-            <a className="contact-link primary-contact" href={`mailto:${profile.email}`}>
+            <a
+              className="contact-link primary-contact"
+              href={`mailto:${profile.email}`}
+              onClick={() => trackEvent('Email Click', { location: 'contact' })}
+            >
               {profile.email}
             </a>
           </li>
           {profile.phone.isPublic && (
             <li>
-              <a className="contact-link" href={`tel:${profile.phone.value}`}>
+              <a
+                className="contact-link"
+                href={`tel:${profile.phone.value}`}
+                onClick={() => trackEvent('Phone Click', { location: 'contact' })}
+              >
                 {profile.phone.value}
               </a>
             </li>
           )}
           <li>
-            <a className="contact-link" href={profile.links.linkedin}>
+            <a
+              className="contact-link"
+              href={profile.links.linkedin}
+              onClick={() => trackEvent('LinkedIn Click', { location: 'contact' })}
+            >
               LinkedIn
             </a>
           </li>
           <li>
-            <a className="contact-link" href={profile.links.github}>
+            <a
+              className="contact-link"
+              href={profile.links.github}
+              onClick={() => trackEvent('GitHub Click', { location: 'contact' })}
+            >
               GitHub
             </a>
           </li>
